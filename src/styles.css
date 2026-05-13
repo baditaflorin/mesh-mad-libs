@@ -1,6 +1,3 @@
-/* App-local styles. Mesh chrome (settings drawer, self-ref bar) is provided by
- * @baditaflorin/mesh-common/styles.css imported in main.tsx. */
-
 :root {
   color-scheme: dark;
 }
@@ -19,33 +16,254 @@ body,
   background: var(--mesh-bg);
   color: var(--mesh-fg);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-  -webkit-tap-highlight-color: transparent;
 }
 
-.feature-placeholder {
-  padding: 6rem 1.5rem 2rem;
-  text-align: center;
+.mad-screen {
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 4.5rem 1.25rem 6rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 1rem;
 }
 
-.feature-placeholder h1 {
+.mad-header h1 {
   font-size: 1.6rem;
-  margin: 0;
+  margin: 0 0 0.25rem;
   color: var(--mesh-accent);
 }
 
-.feature-placeholder p {
-  max-width: 32rem;
+.mad-status {
   margin: 0;
-  opacity: 0.85;
-  line-height: 1.5;
+  opacity: 0.7;
+  font-size: 0.9rem;
 }
 
-.feature-status {
+.mad-template-display {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--mesh-fg);
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.mad-tpl-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.55;
+}
+
+.mad-tpl-text {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  opacity: 0.85;
+}
+
+.mad-template textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--mesh-fg);
+  border: 1px solid var(--mesh-accent);
+  border-radius: 0.4rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+}
+
+.mad-template-actions {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.mad-template-actions button {
+  padding: 0.45rem 0.8rem;
+  background: transparent;
+  color: var(--mesh-fg);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.mad-name input {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--mesh-fg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.4rem;
+}
+
+.mad-section-title {
   font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   opacity: 0.6;
-  font-variant-numeric: tabular-nums;
+  margin: 0 0 0.5rem;
+}
+
+.mad-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.mad-slot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.mad-slot-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.6;
+}
+
+.mad-slot input {
+  width: 100%;
+  padding: 0.55rem 0.85rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--mesh-fg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.4rem;
+}
+
+.mad-submit {
+  margin-top: 0.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--mesh-accent);
+  color: #0e1117;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.mad-submit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.mad-submitted {
+  background: rgba(249, 115, 22, 0.15);
+  border: 1px solid rgba(249, 115, 22, 0.45);
+  border-radius: 0.45rem;
+  padding: 0.7rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mad-submitted button {
+  background: transparent;
+  color: var(--mesh-fg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.35rem;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.mad-roster {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 0.6rem;
+}
+
+.mad-roster h3 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.55;
+  margin: 0 0 0.3rem;
+}
+
+.mad-roster ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.mad-roster li {
+  padding: 0.2rem 0.55rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.mad-empty {
+  opacity: 0.5;
+  font-style: italic;
+  margin: 0.2rem 0;
+}
+
+.mad-phase-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.mad-phase-actions button {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: var(--mesh-fg);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.mad-phase-actions button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.mad-reveal-btn,
+.mad-newround-btn {
+  background: var(--mesh-accent) !important;
+  color: #0e1117 !important;
+  border-color: var(--mesh-accent) !important;
+  font-weight: 600;
+}
+
+.mad-stories {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.mad-story {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 0.5rem;
+  padding: 0.85rem 1rem;
+}
+
+.mad-story-author {
+  display: block;
+  color: var(--mesh-accent);
+  margin-bottom: 0.3rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.mad-story-text {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 1rem;
 }
