@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import type { MeshConfig, YRoom } from "@baditaflorin/mesh-common";
+import { MeshNameInput, type MeshConfig, type YRoom } from "@baditaflorin/mesh-common";
 
 type Props = { room: YRoom | null; config: MeshConfig };
 
@@ -161,15 +161,13 @@ function Body({ room, config }: { room: YRoom; config: MeshConfig }) {
         )}
       </section>
 
-      <div className="mad-name">
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="your name"
-          maxLength={48}
-          aria-label="your name"
-        />
-      </div>
+      <MeshNameInput
+        className="mad-name"
+        value={name}
+        onChange={setName}
+        placeholder="your name"
+        maxLength={48}
+      />
 
       {phase === "fill" ? (
         <section className="mad-fill">
