@@ -110,6 +110,13 @@ body,
   margin: 0 0 0.5rem;
 }
 
+.mad-hint {
+  margin: 0 0 0.75rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
 .mad-slots {
   display: flex;
   flex-direction: column;
