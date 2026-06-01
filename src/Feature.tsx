@@ -120,7 +120,7 @@ function Body({ room, config }: { room: YRoom; config: MeshConfig }) {
         <h1>mad libs</h1>
         <p className="mad-status">
           {submissionList.length} {submissionList.length === 1 ? "submission" : "submissions"} ·{" "}
-          {room.peerCount + 1} present · phase: {phase}
+          {room.peerCount + 1} present · {phase === "fill" ? "filling" : "revealed"}
         </p>
       </header>
 
@@ -172,6 +172,13 @@ function Body({ room, config }: { room: YRoom; config: MeshConfig }) {
       {phase === "fill" ? (
         <section className="mad-fill">
           <h2 className="mad-section-title">fill the slots</h2>
+          {!mySub && (
+            <p className="mad-hint">
+              The trick: fill each blank <strong>without reading the sentence</strong> — just answer
+              the word type. Everyone submits, then someone hits reveal to see the silly stories.
+              Open a second tab (or share the 📡 invite) so a friend fills theirs too.
+            </p>
+          )}
           {mySub ? (
             <div className="mad-submitted">
               <p>

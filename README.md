@@ -16,7 +16,20 @@ Tip the dev: **https://www.paypal.com/paypalme/florinbadita**
 
 ## What it is
 
-Peer-to-peer browser app, no backend of its own beyond the self-hosted WebRTC stack listed below. Built on `@baditaflorin/mesh-common`, hosted on GitHub Pages from `docs/`.
+Group mad libs in your browser. Everyone fills the same set of blanks
+(a noun, a verb, an exclamation…) **without reading the sentence** — then
+one person hits **reveal** and every player's silly story appears for all to
+read. The template is editable and shared, and every submission and the reveal
+flip sync live across all players. No account, no server holding your data.
+
+**Try it in 30 seconds:** open the live link, type your name, fill each blank,
+and hit **submit blindly**. Open the same page in a second tab (or share the
+📡 invite QR) and fill it as a different name — then hit **reveal all stories**
+and watch both versions show up in both tabs.
+
+Peer-to-peer browser app, no backend of its own beyond the self-hosted WebRTC
+stack listed below. Built on `@baditaflorin/mesh-common`, hosted on GitHub Pages
+from `docs/`.
 
 ## Quickstart (local)
 
